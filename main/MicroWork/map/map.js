@@ -1,8 +1,7 @@
 let latitude = 51.087063;
 let longtitude = 71.427878;
-let zoom = 14;
 
-var mymap = L.map('mapid').setView([latitude, longtitude], zoom);
+var mymap = L.map('mapid').setView([latitude, longtitude], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
