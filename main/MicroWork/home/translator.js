@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Shared
             'nav-create-resume': 'Create Resume',
             'nav-sign-in': 'Sign In',
-            'search-placeholder': 'Type of work, task or payment',
+            'search-placeholder': 'Duration, company, or field',
             'search-button': 'Find',
             
             // index.html
-            'hero-title': 'Find Your Dream Gig',
+            'hero-title': 'Find Your Next Task',
             'employee-link': "For employers",
 
             // search.html
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'experience-option-6+': 'More than 6 years',
             'reset-filters-button': 'Reset Filters',
             'found-gigs-text': 'Found',
-            'gigs-text': 'gigs',
+            'gigs-text': 'tasks',
             'sort-by-label': 'Sort by:',
             'sort-relevance': 'Relevance',
             'sort-date': 'Date',
@@ -40,14 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Shared
             'nav-create-resume': 'Создать резюме',
             'nav-sign-in': 'Войти',
-            'search-placeholder': 'Тип работы, задача, или оплата',
+            'search-placeholder': 'Сфера, компания, или длительность',
             'search-button': 'Найти',
             
             // index.html
-            'hero-title': 'Найди разовую работу по душе',
+            'hero-title': 'Найди подходящее задание',
             'employee-link': 'Для работодателей',
 
-            // search-result.html
+            // search.html
             'filters-title': 'Фильтры',
             'exclude-label': 'Исключить слова',
             'exclude-placeholder': 'например, рекрутер...',
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'experience-option-6+': 'Более 6 лет',
             'reset-filters-button': 'Сбросить фильтры',
             'found-gigs-text': 'Найдено',
-            'gigs-text': 'вакансий',
+            'gigs-text': 'заданий',
             'sort-by-label': 'Сортировать по:',
             'sort-relevance': 'Релевантности',
             'sort-date': 'Дате',
@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Shared
             'nav-create-resume': 'Түйіндеме жасау',
             'nav-sign-in': 'Кіру',
-            'search-placeholder': 'Жұмыс түрі, міндеті, немесе төлем ақы',
+            'search-placeholder': 'Сала, компания, немесе ұзақтығы',
             'search-button': 'Іздеу',
             
             // index.html
-            'hero-title': 'Армандаған жұмысыңды тап',
-            'employee-link': 'Жұмыс берушілерге',
+            'hero-title': 'Өзіңе сай тапсырысты тап',
+            'employee-link': 'Тапсырыс берушілерге',
 
             // search.html
             'filters-title': 'Сүзгілер',
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'experience-option-6+': '6 жылдан астам',
             'reset-filters-button': 'Сүзгілерді тазалау',
             'found-gigs-text': 'Табылды',
-            'gigs-text': 'бос жұмыс орны',
+            'gigs-text': 'тапсырма',
             'sort-by-label': 'Сұрыптау:',
             'sort-relevance': 'Сәйкестігі',
             'sort-date': 'Күні',
