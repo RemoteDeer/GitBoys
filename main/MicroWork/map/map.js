@@ -1,6 +1,6 @@
 let latitude = 51.087063;
 let longtitude = 71.427878;
-let zoom = 20
+let zoom = 14;
 
 var mymap = L.map('mapid').setView([latitude, longtitude], zoom);
 
