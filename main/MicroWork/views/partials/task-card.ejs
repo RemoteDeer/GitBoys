@@ -1,48 +1,31 @@
-<%# 
-  This is an EJS partial template for a single task card.
-  It expects a 'task' object with the following properties:
-  - title (String)
-  - salary (String)
-  - company (String)
-  - location (String)
-  - description (String)
-  - postedAgo (String)
-  - companyInitials (String)
-%>
-
-<div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row items-start gap-4">
-    <!-- Company Initials (visible on larger screens) -->
-    <div class="hidden sm:block bg-gray-100 text-gray-500 font-bold rounded-md w-12 h-12 flex-shrink-0 flex items-center justify-center">
-        <%= task.companyInitials %>
+<!-- This is the corrected, reusable template for a single task listing -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+    
+    <!-- Logo Section (Flex Child 1) - There is only ONE logo element now -->
+    <div class="flex-shrink-0">
+        <div class="w-14 h-14 bg-gray-200 rounded-md flex items-center justify-center">
+            <span class="text-xl font-bold text-gray-600"><%= task.logo %></span>
+        </div>
     </div>
 
-    <!-- Main Task Info -->
+    <!-- Main Task Info (Flex Child 2) -->
     <div class="flex-grow">
-        <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-            <h3 class="text-xl font-bold text-blue-600 hover:underline cursor-pointer"><%= task.title %></h3>
-            <!-- Company Initials (visible on mobile) -->
-            <div class="sm:hidden mt-2 mb-2 bg-gray-100 text-gray-500 font-bold rounded-md w-10 h-10 flex-shrink-0 flex items-center justify-center">
-                 <%= task.companyInitials %>
-            </div>
-        </div>
+        <h3 class="text-xl font-bold text-blue-600 hover:underline cursor-pointer"><%= task.title %></h3>
         <p class="text-lg font-semibold text-gray-800 mt-1"><%= task.salary %></p>
-        <div class="flex items-center text-gray-500 text-sm mt-2">
+        <div class="text-sm text-gray-500 mt-2 flex items-center gap-2 flex-wrap">
             <span><%= task.company %></span>
-            <span class="mx-2">&bull;</span>
+            <span class="text-gray-300">•</span>
             <span><%= task.location %></span>
         </div>
-        <p class="text-gray-600 mt-3 text-sm leading-relaxed">
-            <%= task.description.substring(0, 120) %>...
+        <p class="text-gray-700 mt-3 text-base">
+            <%= task.description %>
         </p>
     </div>
 
-    <!-- Apply Button and Posted Time -->
-    <div class="w-full sm:w-auto flex flex-col items-start sm:items-end justify-between mt-4 sm:mt-0 flex-shrink-0 sm:ml-4">
-        <a href="#" class="apply-button w-full sm:w-auto bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">
-            Apply
-        </a>
-        <p class="text-gray-400 text-xs mt-3 w-full sm:w-auto text-left sm:text-right">
-            <%= task.postedAgo %>
-        </p>
+    <!-- Apply Button & Time Section (Flex Child 3) -->
+    <div class="w-full sm:w-auto flex-shrink-0 flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-end mt-4 sm:mt-0 gap-4">
+        <a href="#" class="apply-button bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">Apply</a>
+        <p class="text-xs text-gray-400 sm:mt-4"><%= task.posted %></p>
     </div>
+
 </div>
