@@ -168,6 +168,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const count = foundGigsEl.dataset.count;
             foundGigsEl.textContent = `${t['found-gigs-text']} ${count} ${t['gigs-text']}`;
         }
+
+        // Style Adjustment Logic
+        const heroTitle = document.getElementById('hero-title');
+        if (heroTitle) {
+            // Reset classes to a known state before applying new ones
+            heroTitle.classList.remove('text-4xl', 'md:text-6xl', 'text-3xl', 'md:text-5xl');
+
+            if (lang === 'ru' || lang === 'kk') {
+                // Apply smaller font sizes for longer text in Russian and Kazakh
+                heroTitle.classList.add('text-3xl', 'md:text-5xl');
+            } else {
+                // Default font sizes for English
+                heroTitle.classList.add('text-4xl', 'md:text-6xl');
+            }
+        }
         
         // Update language switcher display
         const currentLangSpan = document.getElementById('current-lang');
