@@ -9,5 +9,9 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(mymap);
 
-var marker = L.marker([51.087063, 71.427878]).addTo(mymap);
-marker.bindPopup("<b>Hello Aslan!</b><br>It is your home, isn't it?").openPopup();
+function onMapClick(e) {
+    var marker = L.marker(e.latlng).addTo(mymap);
+    marker.bindPopup(e.latlng).openPopup();
+}
+
+mymap.on('click', onMapClick);
