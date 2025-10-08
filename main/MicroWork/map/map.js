@@ -1,13 +1,13 @@
-let mapOptions = {
-    center:[51.958, 9.141],
-    zoom:10
-}
+let latitude = 51.087063;
+let longtitude = 71.427878;
+let zoom = 20
 
+var mymap = L.map('mapid').setView([latitude, longtitude], zoom);
 
-let map = new L.map('map' , mapOptions);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(mymap);
 
-let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-let marker = new L.Marker([51.958, 9.141]);
-marker.addTo(map);
+var marker = L.marker([51.087063, 71.427878]).addTo(mymap);
+marker.bindPopup("<b>Hello Aslan!</b><br>It is your home, isn't it?").openPopup();
