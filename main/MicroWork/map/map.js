@@ -11,7 +11,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 function onMapClick(e) {
     var marker = L.marker(e.latlng).addTo(mymap);
-    marker.bindPopup(e.latlng).openPopup();
+    marker.bindPopup("You clicked the map at LatLng" + e.latlng).openPopup();
 }
 
 mymap.on('click', onMapClick);
