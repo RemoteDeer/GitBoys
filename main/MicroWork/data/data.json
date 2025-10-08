@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Alice Carter",
+    "position": [51.505, -0.09],
+    "description": "A cozy café known for its handmade pastries and local coffee blends."
+  },
+  {
+    "name": "Benjamin Lee",
+    "position": [51.507, -0.083],
+    "description": "A small bookstore filled with rare editions and peaceful reading corners."
+  },
+  {
+    "name": "Clara Nguyen",
+    "position": [51.509, -0.095],
+    "description": "An art gallery showcasing works by emerging London-based artists."
+  },
+  {
+    "name": "Daniel Smith",
+    "position": [51.503, -0.1],
+    "description": "A riverside park offering scenic walking trails and bike paths."
+  },
+  {
+    "name": "Emma Johnson",
+    "position": [51.511, -0.085],
+    "description": "A historic pub famous for its traditional English dishes and live music nights."
+  },
+  {
+    "name": "Felix Brown",
+    "position": [51.508, -0.078],
+    "description": "A street food stall serving fresh tacos and homemade salsa."
+  },
+  {
+    "name": "Grace Wilson",
+    "position": [51.506, -0.092],
+    "description": "A small museum dedicated to maritime history and naval innovations."
+  },
+  {
+    "name": "Henry Patel",
+    "position": [51.504, -0.087],
+    "description": "A quiet library offering free workshops and study rooms for students."
+  },
+  {
+    "name": "Isabella Davis",
+    "position": [51.512, -0.089],
+    "description": "A flower shop with a wide selection of exotic plants and floral gifts."
+  },
+  {
+    "name": "Jack Thompson",
+    "position": [51.509, -0.081],
+    "description": "A tech startup office focused on AI-driven environmental monitoring."
+  }
+]
