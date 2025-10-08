@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // index.html
             'hero-title': 'Find Your Dream Gig',
-            'employee-link': "I'm looking for an employee",
+            'employee-link': "For employers",
 
             // search.html
             'filters-title': 'Filters',
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // index.html
             'hero-title': 'Найди разовую работу по душе',
-            'employee-link': 'Я ищу сотрудника',
+            'employee-link': 'Для работодателей',
 
             // search-result.html
             'filters-title': 'Фильтры',
@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Shared
             'nav-create-resume': 'Түйіндеме жасау',
             'nav-sign-in': 'Кіру',
-            'search-placeholder': 'Мамандық, лауазым немесе компания',
+            'search-placeholder': 'Жұмыс түрі, міндеті, немесе төлем ақы',
             'search-button': 'Іздеу',
             
             // index.html
             'hero-title': 'Армандаған жұмысыңды тап',
-            'employee-link': 'Мен қызметкер іздеймін',
+            'employee-link': 'Жұмыс берушілерге',
 
             // search.html
             'filters-title': 'Сүзгілер',
