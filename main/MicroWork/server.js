@@ -17,7 +17,7 @@ const tasks = [
         salary: '$3,000 per project',
         company: 'Creative Solutions Inc.',
         location: 'Remote',
-        description: 'We are looking for a talented UI/UX designer to create a modern and intuitive interface for our new fitness application...',
+        description: 'We are looking for a talented UI/UX designer...',
         posted: '17 minutes ago',
         logo: 'CS',
         skills: ['Figma', 'UI', 'UX', 'Mobile Design'],
@@ -31,7 +31,7 @@ const tasks = [
         salary: '$500 per article',
         company: 'Innovatech',
         location: 'Astana',
-        description: 'Seeking a skilled writer to produce high-quality articles on AI and machine learning trends.',
+        description: 'Seeking a skilled writer to produce high-quality articles...',
         posted: '2 hours ago',
         logo: 'IN',
         skills: ['Writing', 'SEO', 'AI'],
@@ -45,7 +45,7 @@ const tasks = [
         salary: '$20 per hour',
         company: 'The Daily Grind',
         location: 'Astana',
-        description: 'Friendly and energetic barista needed for morning shifts. No prior experience necessary, we will train.',
+        description: 'Friendly and energetic barista needed for morning shifts...',
         posted: '1 day ago',
         logo: 'DG',
         skills: ['Customer Service'],
@@ -59,7 +59,7 @@ const tasks = [
         salary: '$150 per day',
         company: 'Global Data Corp',
         location: 'Remote',
-        description: 'Accurate and efficient data entry specialist for a short-term project. Must be proficient with Excel.',
+        description: 'Accurate and efficient data entry specialist for a short-term project...',
         posted: '3 days ago',
         logo: 'GD',
         skills: ['Excel', 'Data Entry'],
@@ -72,17 +72,15 @@ const tasks = [
 
 // --- Routes ---
 
-// Homepage Route
 app.get('/', (req, res) => {
     res.render('home');
 });
 
-// Search Page Route - Updated with Filtering Logic
 app.get('/search', (req, res) => {
     const { query, skills, location, format, duration, education, special } = req.query;
     let filteredTasks = tasks;
 
-    // 1. Filter by main search query (in title, company, or description)
+    // Filtering logic...
     if (query) {
         filteredTasks = filteredTasks.filter(task =>
             task.title.toLowerCase().includes(query.toLowerCase()) ||
@@ -90,41 +88,25 @@ app.get('/search', (req, res) => {
             task.description.toLowerCase().includes(query.toLowerCase())
         );
     }
-
-    // 2. Filter by location (if provided)
     if (location) {
-        if (location.toLowerCase() === 'remote') {
-            filteredTasks = filteredTasks.filter(task => task.location === 'Remote');
-        } else {
-            filteredTasks = filteredTasks.filter(task => task.location.toLowerCase().includes(location.toLowerCase()));
-        }
+         filteredTasks = filteredTasks.filter(task => task.location.toLowerCase().includes(location.toLowerCase()));
     }
-    
-    // 3. Filter by skills (task must have ALL selected skills)
     if (skills && skills.length > 0) {
         const skillArray = Array.isArray(skills) ? skills : [skills];
         filteredTasks = filteredTasks.filter(task =>
             skillArray.every(skill => task.skills.map(s => s.toLowerCase()).includes(skill.toLowerCase()))
         );
     }
-
-    // 4. Filter by format (can match any of the selected formats)
     if (format && format.length > 0) {
         const formatArray = Array.isArray(format) ? format : [format];
         filteredTasks = filteredTasks.filter(task => formatArray.includes(task.format));
     }
-
-    // 5. Filter by duration
     if (duration && duration !== 'Any') {
         filteredTasks = filteredTasks.filter(task => task.duration === duration);
     }
-    
-    // 6. Filter by education
     if (education && education !== 'Any level') {
         filteredTasks = filteredTasks.filter(task => task.education === education);
     }
-
-    // 7. Filter by special categories
     if (special && special.length > 0) {
         const specialArray = Array.isArray(special) ? special : [special];
         filteredTasks = filteredTasks.filter(task => 
@@ -132,16 +114,13 @@ app.get('/search', (req, res) => {
         );
     }
 
-    // THE FIX IS HERE: We now pass the 'filters' object to the template
     res.render('search', {
         tasks: filteredTasks,
         query: query || '',
-        filters: req.query // This line ensures the 'filters' variable is always available
+        filters: req.query
     });
 });
 
-
-// Start the server
 app.listen(port, () => {
     console.log(`Server is running successfully on http://localhost:${port}`);
 });
