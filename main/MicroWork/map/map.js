@@ -1,8 +1,8 @@
-let latitude = 51.087063;
-let longtitude = 71.427878;
+let initial_ltd = 51.087063;
+let initial_lng = 71.427878;
 let zoom = 13;
 
-const mymap = L.map('mapid').setView([latitude, longtitude], zoom);
+const mymap = L.map('mapid').setView([initial_ltd, initial_ltd], zoom);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
