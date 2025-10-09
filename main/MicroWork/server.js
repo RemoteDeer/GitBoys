@@ -98,7 +98,7 @@ app.get('/search', (req, res) => {
         ].join(' ').toLowerCase();
         
         // Check if ALL search terms are included in the task's text
-        return terms.every(term => searchableText.includes(term));
+        return searchTerms.every(term => searchableText.includes(term));
         });
     }
 
