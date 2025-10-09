@@ -80,17 +80,37 @@ app.get('/search', (req, res) => {
     const { query, skills, location, format, duration, education, special } = req.query;
     let filteredTasks = tasks;
 
-    // Filtering logic...
+    // Filtering query
     if (query) {
-        filteredTasks = filteredTasks.filter(task =>
-            task.title.toLowerCase().includes(query.toLowerCase()) ||
-            task.company.toLowerCase().includes(query.toLowerCase()) ||
-            task.description.toLowerCase().includes(query.toLowerCase())
-        );
+        // Split the query into individual search terms
+        const searchTerms = query.toLowerCase().split().filter(term => term);
+
+        filteredTasks = filteredTasks.filter(task => {
+            // Combine all searchable text fields of a task into one string
+            const searchableText = [
+                task.title,
+                task.company,
+                task.location,
+                task.description,
+                task.skills,
+                task.special
+
+        ].join(' ').toLowerCase();
+        
+        // Check if ALL search terms are included in the task's text
+        return terms.every(term => searchableText.includes(term));
+        });
     }
+
+    // -- Filtering options --
+
+    //Filtering Location
     if (location) {
-         filteredTasks = filteredTasks.filter(task => task.location.toLowerCase().includes(location.toLowerCase()));
+         filteredTasks = filteredTasks.filter(task => 
+            task.location.toLowerCase().includes(location.toLowerCase()));
     }
+
+    //Filtering Skills
     if (skills && skills.length > 0) {
         const skillArray = Array.isArray(skills) ? skills : [skills];
         filteredTasks = filteredTasks.filter(task =>
