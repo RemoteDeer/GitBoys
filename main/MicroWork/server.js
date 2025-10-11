@@ -10,65 +10,67 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files from the "public" directory
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// Mock Data - Expanded with properties for filtering
+// Mock Data - With translations
 const tasks = [
     {
-        title: 'UI/UX Designer for Mobile App',
-        salary: '$3,000 per project',
+        title: { en: 'UI/UX Designer for Mobile App', ru: 'UI/UX Дизайнер для мобильного приложения', kk: 'Мобильді қосымшаға арналған UI/UX дизайнері' },
+        salary: { amount: 3000, currency: 'USD', period: 'project' },
         company: 'Creative Solutions Inc.',
-        location: 'Remote',
-        description: 'We are looking for a talented UI/UX designer...',
+        location: { type: 'remote' },
+        description: { en: 'We are looking for a talented UI/UX designer...', ru: 'Ищем талантливого UI/UX дизайнера...', kk: 'Біз талантты UI/UX дизайнерін іздейміз...' },
         posted: '17 minutes ago',
         logo: 'CS',
         skills: ['Figma', 'UI', 'UX', 'Mobile Design'],
-        format: 'Online',
-        duration: 'More than a week',
-        education: "Bachelor's Degree",
-        special: ['Suitable for students']
+        format: 'online',
+        duration: 'more_than_week', 
+        education: 'bachelors', 
+        special: ['students'] 
     },
     {
-        title: 'Content Writer for Tech Blog',
-        salary: '$500 per article',
+        title: { en: 'Content Writer for Tech Blog', ru: 'Автор контента для технического блога', kk: 'Техникалық блогқа контент жазушы' },
+        salary: { amount: 225000, currency: 'KZT', period: 'project' }, 
         company: 'Innovatech',
-        location: 'Astana',
-        description: 'Seeking a skilled writer to produce high-quality articles...',
+        location: { type: 'on-site', city: 'Astana', country: 'Kazakhstan' },
+        description: { en: 'Seeking a skilled writer to produce high-quality articles...', ru: 'Ищем опытного автора для написания качественных статей...', kk: 'Жоғары сапалы мақалалар жазу үшін білікті жазушыны іздеудеміз...' },
         posted: '2 hours ago',
         logo: 'IN',
         skills: ['Writing', 'SEO', 'AI'],
-        format: 'In-person',
-        duration: 'About a week',
-        education: "Any level",
+        format: 'in_person',
+        duration: 'about_week',
+        education: "any",
         special: []
     },
     {
-        title: 'Part-time Barista',
-        salary: '$20 per hour',
+        title: { en: 'Part-time Barista', ru: 'Бариста на неполный рабочий день', kk: 'Жарты күн жұмыс істейтін бариста' },
+        salary: { amount: 9000, currency: 'KZT', period: 'hour' }, 
         company: 'The Daily Grind',
-        location: 'Astana',
-        description: 'Friendly and energetic barista needed for morning shifts...',
+        location: { type: 'on-site', city: 'Astana', country: 'Kazakhstan' },
+        description: { en: 'Friendly and energetic barista needed for morning shifts...', ru: 'Требуется дружелюбный и энергичный бариста на утренние смены...', kk: 'Таңертеңгі ауысымға мейірімді және жігерлі бариста қажет...' },
         posted: '1 day ago',
         logo: 'DG',
         skills: ['Customer Service'],
-        format: 'In-person',
-        duration: '1-3 days',
-        education: 'High School',
-        special: ['Suitable for students']
+        format: 'in_person',
+        duration: '1_3_days',
+        education: 'high_school',
+        special: ['students']
     },
     {
-        title: 'Data Entry Assistant',
-        salary: '$150 per day',
+        title: { en: 'Data Entry Assistant', ru: 'Ассистент по вводу данных', kk: 'Деректерді енгізу жөніндегі көмекші' },
+        salary: { amount: 150, currency: 'USD', period: 'day' },
         company: 'Global Data Corp',
-        location: 'Remote',
-        description: 'Accurate and efficient data entry specialist for a short-term project...',
+        location: { type: 'remote' },
+        description: { en: 'Accurate and efficient data entry specialist...', ru: 'Требуется точный и эффективный специалист...', kk: 'Деректерді енгізу бойынша ұқыпты және тиімді маман қажет...' },
         posted: '3 days ago',
         logo: 'GD',
         skills: ['Excel', 'Data Entry'],
-        format: 'Online',
-        duration: 'Less than a day',
-        education: 'High School',
-        special: ['Accessible']
+        format: 'online',
+        duration: 'less_than_day',
+        education: 'high_school',
+        special: ['accessible']
     }
 ];
+
+//
 
 // --- Routes ---
 
