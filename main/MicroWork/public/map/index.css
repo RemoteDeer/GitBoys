@@ -1,4 +1,49 @@
-#mapid{
+/* Карта должна занимать всю доступную область */
+#mapid {
     width: 100%;
     height: 100vh;
+    z-index: 1; /* Карта должна быть ниже панели управления */
+}
+
+/* Стили для плавного появления и адаптивности */
+.control-panel {
+    /* Фиксируем панель вверху, чтобы она плавала над картой */
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Убедимся, что она выше карты */
+    z-index: 1000;
+
+    /* Адаптивная ширина */
+    width: 95%;
+    max-width: 1200px;
+}
+
+/* Убедимся, что тело не имеет лишних отступов */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Предотвращаем скролл, так как карта занимает 100vh */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Стили для полей фильтра */
+.filter-popup {
+    position: absolute;
+    top: 55px; /* Смещение вниз от панели */
+    right: 0;
+    width: 280px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Скрытие/показ фильтра */
+.filter-hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
 }
