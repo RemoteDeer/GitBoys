@@ -110,6 +110,7 @@ const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
 const radiusRange = document.getElementById('radius-range');
 const radiusValue = document.getElementById('radius-value');
+const tagsContainer = document.getElementById('tagContainer');
 
 // 1. Управление фильтром
 filterToggle.addEventListener('click', () => {
@@ -128,6 +129,21 @@ searchInput.addEventListener('keypress', (e) => {
 radiusRange.addEventListener('input', (e) => {
     radiusValue.textContent = `${e.target.value} км`;
 });
+
+searchButton.onclick = function() {
+    const value = searchInput.value.trim();
+    if(value === '') return;
+
+    const tag = document.createElement('span');
+    tag.textContent = value;
+    tag.className = 'bg-gray-200 text-gray-800 text-sm px-3 py-1 rounded-full cursor-pointer hover:bg-gray-300 transition';
+    tag.addEventListener('click', (e) => {
+        tag.remove();
+    });
+
+    tagsContainer.appendChild(tag);
+    searchInput.value = '';
+};
 
 // 4. Запуск загрузки данных при старте
 loadData();
